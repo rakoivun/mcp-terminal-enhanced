@@ -13,9 +13,10 @@
       "command": "sequentialthinking-proper",
       "args": []
     },
-    "terminal-controller": {
+    "terminal-controller-enhanced": {
       "command": "python",
-      "args": ["C:\\code\\nvdiffrast-trials\\src\\terminal_controller_wrapper.py"]
+      "args": ["C:\\code\\nvdiffrast-trials\\src\\terminal_controller_wrapper.py"],
+      "description": "Enhanced terminal controller with smart workspace detection and Git Bash support"
     }
   }
 }

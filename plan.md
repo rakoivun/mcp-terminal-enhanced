@@ -43,8 +43,10 @@ The hidden `.cursor/mcp.json` file has a broken terminal-controller entry that's
 1. ✅ **Investigation**: Found all config files with terminal-controller
 2. ✅ **Analysis**: Identified `.cursor/mcp.json` as the hidden culprit
 3. ✅ **Cleanup**: Removed the broken entry from `.cursor/mcp.json`
-4. **Verification**: Restart Cursor and confirm single working entry
-5. **Documentation**: Update plan with final working configuration
+4. ✅ **Git Commit**: Changes committed to git (commit 1a87bed)
+5. ✅ **Verification**: Restarted Cursor - confirmed single working entry
+6. ✅ **Naming Fix**: Updated to use "terminal-controller-enhanced" for proper naming
+7. **Documentation**: Update plan with final working configuration
 
 ## Success Criteria
 - Only ONE terminal-controller entry visible in Cursor MCP interface
