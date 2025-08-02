@@ -1,62 +1,32 @@
 # MCP Terminal Enhanced
 
-Enhanced terminal controller for Model Context Protocol (MCP) with smart workspace detection and Git Bash support on Windows.
+Self-sufficient terminal controller for Model Context Protocol (MCP) with Git Bash integration.
 
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![Python](https://img.shields.io/badge/python-3.10%2B-blue.svg)
-![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey.svg)
-![Status](https://img.shields.io/badge/status-Fully%20Working-brightgreen.svg)
-
-## About This Project
-
-This project provides a **self-sufficient terminal controller** for MCP that includes:
-- Complete standalone implementation (no external dependencies)
-- All 10 original terminal tools
-- Enhanced Git Bash integration on Windows
-- Smart workspace detection
-- Python 3.10+ compatibility
-
-**Built on and inspired by the excellent [terminal-controller-mcp](https://github.com/GongRzhe/terminal-controller-mcp) package by GongRzhe.**
-
-## Current Status: FULLY WORKING
-
-- **All 10 tools enabled and functional**  
-- **Git Bash integration working perfectly**  
-- **Fast command execution (~0.03-0.06 seconds)**  
-- **Auto-starts with Cursor**  
-- **No external dependencies required**
+![Status](https://img.shields.io/badge/status-Working-brightgreen.svg)
 
 ## Features
 
-- **Smart Project Detection** - Automatically detects workspace root using common project markers
-- **Git Bash Integration** - Full Unix command support on Windows with Git Bash
-- **Dynamic Workspace** - No hard-coded paths, works with any project structure
-- **Easy Configuration** - Simple JSON-based setup
-- **Comprehensive Troubleshooting** - Tested solutions for common MCP issues
-- **Zero Site-packages Modification** - Clean wrapper approach that doesn't modify installed packages
+- **Standalone** - No external dependencies
+- **10 Terminal Tools** - Complete command execution, file operations, directory management
+- **Git Bash Support** - Unix commands on Windows
+- **Auto-detect Workspace** - Finds project root automatically
+- **Auto-start** - Launches with Cursor
 
-## Quick Start
+## Quick Setup
 
-### Prerequisites
-
-- Python 3.10+
-- MCP framework: `pip install mcp`
-- Git Bash (Windows only) - Comes with Git for Windows
-
-### Installation
-
-1. **Clone this repository:**
-   ```bash
-   git clone https://github.com/rakoivun/mcp-terminal-enhanced.git
-   cd mcp-terminal-enhanced
-   ```
-
-2. **Install MCP framework:**
+1. **Install MCP framework:**
    ```bash
    pip install mcp
    ```
 
-3. **Update your MCP configuration:**
+2. **Clone and configure:**
+   ```bash
+   git clone https://github.com/rakoivun/mcp-terminal-enhanced.git
+   ```
+
+3. **Add to Cursor MCP config:**
    ```json
    {
      "mcpServers": {
@@ -69,158 +39,43 @@ This project provides a **self-sufficient terminal controller** for MCP that inc
    }
    ```
 
-4. **Restart Cursor** to activate the terminal controller
+4. **Restart Cursor**
 
-## How It Works
+## Tools Available
 
-### Smart Project Detection
+- `execute_command` - Run shell commands
+- `get_command_history` - View recent commands  
+- `get_current_directory` - Show working directory
+- `change_directory` - Navigate directories
+- `list_directory` - List directory contents
+- `read_file` - Read file contents
+- `write_file` - Write to files
+- `delete_file` - Delete files
+- `insert_file_content` - Insert content at specific line
+- `update_file_content` - Update specific file content
 
-The wrapper automatically finds your project root by looking for common markers:
+## Project Detection
+
+Automatically detects workspace root by finding:
 - `.git` directory
-- `package.json` (Node.js projects)
-- `pyproject.toml` (Python projects)
-- `setup.py` (Python projects)
-- `Cargo.toml` (Rust projects)
-- `go.mod` (Go projects)
-
-### Git Bash Integration (Windows)
-
-On Windows, the wrapper automatically:
-- Detects Git Bash installation
-- Sets proper environment variables
-- Enables Unix-style command execution
-- Provides consistent cross-platform behavior
-
-### Environment Variables
-
-The wrapper sets these environment variables for the MCP server:
-- `MCP_WORKSPACE_DIR` - Automatically detected project root
-- `SHELL` - Git Bash path (Windows only)
-- `COMSPEC` - Git Bash path (Windows only)
-
-## Configuration
-
-### Basic Configuration
-
-Create or update your MCP configuration file:
-
-```json
-{
-  "mcpServers": {
-    "terminal-controller": {
-      "command": "python",
-      "args": ["./terminal_controller_wrapper.py"]
-    }
-  }
-}
-```
-
-### Advanced Configuration
-
-You can override the workspace directory by setting an environment variable:
-
-```bash
-export MCP_WORKSPACE_DIR="/custom/workspace/path"
-```
-
-Or in your wrapper script:
-```python
-os.environ['MCP_WORKSPACE_DIR'] = '/custom/workspace/path'
-```
-
-## Project Structure
-
-```
-mcp-terminal-enhanced/
-├── README.md
-├── LICENSE
-├── src/
-│   ├── terminal_controller_wrapper.py    # Main enhanced wrapper
-│   └── gitbash_terminal_controller.py    # Legacy Git Bash wrapper
-├── config/
-│   ├── mcp_wrapper_config.json          # Example MCP configuration
-│   └── cursor_mcp_config.json           # Cursor-specific configuration
-├── docs/
-│   ├── installation.md                  # Detailed installation guide
-│   ├── configuration.md                 # Configuration options
-│   ├── troubleshooting.md               # Common issues and solutions
-│   └── development.md                   # Development guidelines
-├── tests/
-│   ├── test_project_detection.py        # Test project root detection
-│   ├── test_environment_setup.py        # Test environment configuration
-│   └── test_gitbash_integration.py      # Test Git Bash functionality
-└── examples/
-    ├── basic_usage.md                   # Basic usage examples
-    ├── cursor_integration.md            # Cursor IDE integration
-    └── troubleshooting_scenarios.md     # Common troubleshooting scenarios
-```
+- `package.json`, `pyproject.toml`, `setup.py`
+- `Cargo.toml`, `go.mod`
 
 ## Troubleshooting
 
-### Common Issues
+**Server won't start?**
+- Check Python path in MCP config
+- Ensure `autoStart: true` is set
+- Restart Cursor after config changes
 
-1. **MCP server doesn't start in project directory**
-   - Ensure your project has a recognizable marker (`.git`, `package.json`, etc.)
-   - Check that the wrapper script has execute permissions
-   - Verify the path in your MCP configuration
-
-2. **Git Bash commands fail on Windows**
-   - Ensure Git for Windows is installed
-   - Check that Git Bash is in the default location: `C:/Program Files/Git/bin/bash.exe`
-   - Try running the wrapper script directly to see error messages
-
-3. **Permission denied errors**
-   - Ensure the wrapper script has execute permissions: `chmod +x terminal_controller_wrapper.py`
-   - Check that your user has permissions to the detected workspace directory
-
-### Debug Mode
-
-Add debug output to see what's happening:
-
-```python
-import os
-print(f"[DEBUG] Detected project root: {get_project_root()}", file=sys.stderr)
-print(f"[DEBUG] MCP_WORKSPACE_DIR: {os.environ.get('MCP_WORKSPACE_DIR')}", file=sys.stderr)
-```
-
-## Contributing
-
-Contributions are welcome! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
-
-### Development Setup
-
-1. Clone the repository
-2. Create a virtual environment: `python -m venv venv`
-3. Activate it: `source venv/bin/activate` (Linux/macOS) or `venv\Scripts\activate` (Windows)
-4. Install development dependencies: `pip install -r requirements-dev.txt`
-5. Run tests: `python -m pytest tests/`
+**Commands timeout?**
+- Verify Git Bash is installed (Windows)
+- Check file permissions
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+MIT License - see [LICENSE](LICENSE)
 
-### Attribution
+## Credits
 
-This project builds upon the excellent work of:
-- [terminal-controller-mcp](https://github.com/GongRzhe/terminal-controller-mcp) by **GongRzhe**
-
-For complete attribution details, see [CREDITS.md](CREDITS.md).
-
-## Acknowledgments
-
-- **GongRzhe** for creating the foundational [terminal-controller-mcp](https://github.com/GongRzhe/terminal-controller-mcp) package
-- **Anthropic** for the Model Context Protocol specification
-- **Git for Windows** team for providing Git Bash
-- The open source community for inspiration and feedback
-
-For detailed credits and attribution, see [CREDITS.md](CREDITS.md).
-
-## Support
-
-- **Issues**: [GitHub Issues](https://github.com/rakoivun/mcp-terminal-enhanced/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/rakoivun/mcp-terminal-enhanced/discussions)
-- **Email**: Create an issue for support requests
-
----
-
-**If this project helps you, please consider giving it a star!**
+Built on [terminal-controller-mcp](https://github.com/GongRzhe/terminal-controller-mcp) by GongRzhe.
