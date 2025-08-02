@@ -72,6 +72,10 @@ Automatically detects workspace root by finding:
 - Verify Git Bash is installed (Windows)
 - Check file permissions
 
+## Contributing
+
+Contributions welcome! See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
+
 ## License
 
 MIT License - see [LICENSE](LICENSE)
