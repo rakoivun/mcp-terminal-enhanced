@@ -155,7 +155,7 @@ mcp-terminal-enhanced/
     └── troubleshooting_scenarios.md     # Common troubleshooting scenarios
 ```
 
-## 🐛 Troubleshooting
+## Troubleshooting
 
 ### Common Issues
 
@@ -183,7 +183,7 @@ print(f"[DEBUG] Detected project root: {get_project_root()}", file=sys.stderr)
 print(f"[DEBUG] MCP_WORKSPACE_DIR: {os.environ.get('MCP_WORKSPACE_DIR')}", file=sys.stderr)
 ```
 
-## 🤝 Contributing
+## Contributing
 
 Contributions are welcome! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
@@ -206,7 +206,7 @@ This project builds upon the excellent work of:
 
 For complete attribution details, see [CREDITS.md](CREDITS.md).
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - **GongRzhe** for creating the foundational [terminal-controller-mcp](https://github.com/GongRzhe/terminal-controller-mcp) package
 - **Anthropic** for the Model Context Protocol specification
@@ -215,12 +215,12 @@ For complete attribution details, see [CREDITS.md](CREDITS.md).
 
 For detailed credits and attribution, see [CREDITS.md](CREDITS.md).
 
-## 📞 Support
+## Support
 
-- 🐛 **Issues**: [GitHub Issues](https://github.com/rakoivun/mcp-terminal-enhanced/issues)
-- 💬 **Discussions**: [GitHub Discussions](https://github.com/rakoivun/mcp-terminal-enhanced/discussions)
-- 📧 **Email**: Create an issue for support requests
+- **Issues**: [GitHub Issues](https://github.com/rakoivun/mcp-terminal-enhanced/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/rakoivun/mcp-terminal-enhanced/discussions)
+- **Email**: Create an issue for support requests
 
 ---
 
-**⭐ If this project helps you, please consider giving it a star!**
+**If this project helps you, please consider giving it a star!**
