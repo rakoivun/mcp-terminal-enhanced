@@ -381,9 +381,9 @@ async def list_directory(path: Optional[str] = None) -> str:
         for item in items:
             full_path = os.path.join(path, item)
             if os.path.isdir(full_path):
-                dirs.append(f"📁 {item}/")
+                dirs.append(f"[DIR] {item}/")
             else:
-                files.append(f"📄 {item}")
+                files.append(f"[FILE] {item}")
         
         # Sort directories and files
         dirs.sort()

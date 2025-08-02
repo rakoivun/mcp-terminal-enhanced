@@ -41,14 +41,14 @@ async def test_subprocess_execution():
             
             duration = datetime.now() - start_time
             
-            print(f"✅ SUCCESS!")
+            print(f"SUCCESS!")
             print(f"Duration: {duration}")
             print(f"Return code: {return_code}")
             print(f"Stdout: '{stdout.strip()}'")
             print(f"Stderr: '{stderr.strip()}'")
             
         except asyncio.TimeoutError:
-            print("❌ TIMEOUT ERROR!")
+            print("TIMEOUT ERROR!")
             try:
                 process.kill()
                 print("Process killed")
@@ -56,7 +56,7 @@ async def test_subprocess_execution():
                 print("Failed to kill process")
                 
     except Exception as e:
-        print(f"❌ EXCEPTION: {e}")
+        print(f"EXCEPTION: {e}")
 
 if __name__ == "__main__":
     print("Starting subprocess test...")

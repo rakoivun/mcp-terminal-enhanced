@@ -19,7 +19,7 @@ async def test_subprocess_from_directory(test_dir, description):
             os.chdir(test_dir)
             print(f"Changed to: {os.getcwd()}")
         else:
-            print(f"❌ Directory does not exist: {test_dir}")
+            print(f"ERROR: Directory does not exist: {test_dir}")
             return False
             
         # Test simple subprocess execution
@@ -37,7 +37,7 @@ async def test_subprocess_from_directory(test_dir, description):
             stdout = stdout.decode('utf-8', errors='replace').strip()
             stderr = stderr.decode('utf-8', errors='replace').strip()
             
-            print(f"✅ SUCCESS from {description}")
+            print(f"SUCCESS from {description}")
             print(f"Return code: {process.returncode}")
             print(f"Output: '{stdout}'")
             if stderr:
@@ -45,10 +45,10 @@ async def test_subprocess_from_directory(test_dir, description):
             return True
             
         except asyncio.TimeoutError:
-            print(f"❌ TIMEOUT from {description}")
+            print(f"TIMEOUT from {description}")
             return False
         except Exception as e:
-            print(f"❌ ERROR from {description}: {e}")
+            print(f"ERROR from {description}: {e}")
             return False
             
     finally:
@@ -75,13 +75,13 @@ async def main():
     
     print(f"\n=== RESULTS SUMMARY ===")
     for desc, success in results.items():
-        status = "✅ PASS" if success else "❌ FAIL"
+        status = "PASS" if success else "FAIL"
         print(f"{status}: {desc}")
     
     # Analysis
     all_success = all(results.values())
     if all_success:
-        print("\n🎯 CONCLUSION: Working directory does NOT affect subprocess execution")
+        print("\nCONCLUSION: Working directory does NOT affect subprocess execution")
         print("   The issue is NOT related to working directory")
     else:
         failed_dirs = [desc for desc, success in results.items() if not success]

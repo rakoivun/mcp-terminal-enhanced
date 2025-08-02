@@ -5,9 +5,9 @@ Enhanced terminal controller for Model Context Protocol (MCP) with smart workspa
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![Python](https://img.shields.io/badge/python-3.10%2B-blue.svg)
 ![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey.svg)
-![Status](https://img.shields.io/badge/status-✅%20Fully%20Working-brightgreen.svg)
+![Status](https://img.shields.io/badge/status-Fully%20Working-brightgreen.svg)
 
-## 🏗️ About This Project
+## About This Project
 
 This project provides a **self-sufficient terminal controller** for MCP that includes:
 - Complete standalone implementation (no external dependencies)
@@ -18,24 +18,24 @@ This project provides a **self-sufficient terminal controller** for MCP that inc
 
 **Built on and inspired by the excellent [terminal-controller-mcp](https://github.com/GongRzhe/terminal-controller-mcp) package by GongRzhe.**
 
-## 🎉 Current Status: FULLY WORKING
+## Current Status: FULLY WORKING
 
-✅ **All 10 tools enabled and functional**  
-✅ **Git Bash integration working perfectly**  
-✅ **Fast command execution (~0.03-0.06 seconds)**  
-✅ **Auto-starts with Cursor**  
-✅ **No external dependencies required**
+- **All 10 tools enabled and functional**  
+- **Git Bash integration working perfectly**  
+- **Fast command execution (~0.03-0.06 seconds)**  
+- **Auto-starts with Cursor**  
+- **No external dependencies required**
 
-## ✨ Features
+## Features
 
-- 🎯 **Smart Project Detection** - Automatically detects workspace root using common project markers
-- 🐚 **Git Bash Integration** - Full Unix command support on Windows with Git Bash
-- 📁 **Dynamic Workspace** - No hard-coded paths, works with any project structure  
-- 🔧 **Easy Configuration** - Simple JSON-based setup
-- 🛠️ **Comprehensive Troubleshooting** - Tested solutions for common MCP issues
-- 🔄 **Zero Site-packages Modification** - Clean wrapper approach that doesn't modify installed packages
+- **Smart Project Detection** - Automatically detects workspace root using common project markers
+- **Git Bash Integration** - Full Unix command support on Windows with Git Bash
+- **Dynamic Workspace** - No hard-coded paths, works with any project structure
+- **Easy Configuration** - Simple JSON-based setup
+- **Comprehensive Troubleshooting** - Tested solutions for common MCP issues
+- **Zero Site-packages Modification** - Clean wrapper approach that doesn't modify installed packages
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 
@@ -71,7 +71,7 @@ This project provides a **self-sufficient terminal controller** for MCP that inc
 
 4. **Restart Cursor** to activate the terminal controller
 
-## 📋 How It Works
+## How It Works
 
 ### Smart Project Detection
 
@@ -98,7 +98,7 @@ The wrapper sets these environment variables for the MCP server:
 - `SHELL` - Git Bash path (Windows only)
 - `COMSPEC` - Git Bash path (Windows only)
 
-## 🔧 Configuration
+## Configuration
 
 ### Basic Configuration
 
@@ -128,7 +128,7 @@ Or in your wrapper script:
 os.environ['MCP_WORKSPACE_DIR'] = '/custom/workspace/path'
 ```
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 mcp-terminal-enhanced/

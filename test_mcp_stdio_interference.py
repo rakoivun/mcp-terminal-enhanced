@@ -34,13 +34,13 @@ def test_subprocess_stdio_redirection():
                 text=True,
                 capture_output=(stdout==subprocess.PIPE)
             )
-            print(f"✅ {name}: return_code={result.returncode}")
+            print(f"SUCCESS {name}: return_code={result.returncode}")
             if hasattr(result, 'stdout') and result.stdout:
                 print(f"   stdout: '{result.stdout.strip()}'")
         except subprocess.TimeoutExpired:
-            print(f"❌ {name}: TIMEOUT")
+            print(f"ERROR {name}: TIMEOUT")
         except Exception as e:
-            print(f"❌ {name}: ERROR - {e}")
+            print(f"ERROR {name}: ERROR - {e}")
 
 async def test_asyncio_subprocess_stdio():
     """Test asyncio subprocess with different STDIO configurations"""
@@ -70,12 +70,12 @@ async def test_asyncio_subprocess_stdio():
             else:
                 stdout_str = "None"
                 
-            print(f"✅ {name}: return_code={process.returncode}, stdout='{stdout_str}'")
+            print(f"SUCCESS {name}: return_code={process.returncode}, stdout='{stdout_str}'")
             
         except asyncio.TimeoutError:
-            print(f"❌ {name}: TIMEOUT")
+            print(f"ERROR {name}: TIMEOUT")
         except Exception as e:
-            print(f"❌ {name}: ERROR - {e}")
+            print(f"ERROR {name}: ERROR - {e}")
 
 def test_current_stdio_state():
     """Check current STDIO state to understand MCP context"""
@@ -103,10 +103,10 @@ async def test_detached_subprocess():
         
         stdout, stderr = await asyncio.wait_for(process.communicate(), 5)
         stdout_str = stdout.decode('utf-8', errors='replace').strip()
-        print(f"✅ Detached process: return_code={process.returncode}, stdout='{stdout_str}'")
+        print(f"SUCCESS Detached process: return_code={process.returncode}, stdout='{stdout_str}'")
         
     except Exception as e:
-        print(f"❌ Detached process: ERROR - {e}")
+        print(f"ERROR Detached process: ERROR - {e}")
 
 async def main():
     print("Testing MCP STDIO Interference Theory")
