@@ -6,10 +6,10 @@ This guide shows how to configure the terminal-controller-enhanced globally for 
 
 The MCP is now configured globally in `~/.cursor/mcp.json` with these benefits:
 
-- ✅ **No project-specific paths** - works in any project directory
-- ✅ **Auto workspace detection** - automatically finds the correct project root
-- ✅ **Git Bash integration** - uses Git Bash on Windows by default
-- ✅ **Cross-platform compatibility** - works on Windows, macOS, and Linux
+- **No project-specific paths** - works in any project directory
+- **Auto workspace detection** - automatically finds the correct project root
+- **Git Bash integration** - uses Git Bash on Windows by default
+- **Cross-platform compatibility** - works on Windows, macOS, and Linux
 
 ## Required Files in Your Project
 
@@ -65,9 +65,9 @@ pip install terminal-controller>=0.1.9
 
 If you had project-specific configs before:
 
-1. ✅ **Removed**: Project-specific config files from git tracking
-2. ✅ **Added**: Config files to `.gitignore` 
-3. ✅ **Created**: Global config in `~/.cursor/mcp.json`
+1. **Removed**: Project-specific config files from git tracking
+2. **Added**: Config files to `.gitignore` 
+3. **Created**: Global config in `~/.cursor/mcp.json`
 4. **Required**: Copy `terminal_controller_wrapper.py` to new projects
 
 ## Troubleshooting
@@ -92,4 +92,4 @@ To enable MCP in a new project:
 2. Install: `pip install terminal-controller>=0.1.9`
 3. Restart Cursor - MCP will automatically work!
 
-No project-specific configuration needed! 🎯
+No project-specific configuration needed!

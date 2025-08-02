@@ -186,7 +186,7 @@ This will show:
 
 ### Getting Help
 
-- 🐛 **Issues**: [GitHub Issues](https://github.com/rakoivun/mcp-terminal-enhanced/issues)
+- **Issues**: [GitHub Issues](https://github.com/rakoivun/mcp-terminal-enhanced/issues)
 - 💬 **Discussions**: [GitHub Discussions](https://github.com/rakoivun/mcp-terminal-enhanced/discussions)
 - 📖 **Documentation**: Check other files in the `docs/` directory
 

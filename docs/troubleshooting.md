@@ -308,7 +308,7 @@ If MCP communication fails:
 
 ### Where to Get Help
 
-- 🐛 **Issues**: [GitHub Issues](https://github.com/rakoivun/mcp-terminal-enhanced/issues)
+- **Issues**: [GitHub Issues](https://github.com/rakoivun/mcp-terminal-enhanced/issues)
 - 💬 **Discussions**: [GitHub Discussions](https://github.com/rakoivun/mcp-terminal-enhanced/discussions)
 - 📖 **Documentation**: Check other files in `docs/` directory
 

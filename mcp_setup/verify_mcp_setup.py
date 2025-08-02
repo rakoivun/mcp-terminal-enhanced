@@ -14,7 +14,7 @@ def check_project_config():
     """Check project-specific MCP configuration"""
     config_file = '.cursor/mcp.json'
     
-    print("📁 Project Configuration (.cursor/mcp.json)")
+    print("[INFO] Project Configuration (.cursor/mcp.json)")
     print("-" * 50)
     
     if not os.path.exists(config_file):
@@ -25,13 +25,13 @@ def check_project_config():
         with open(config_file, 'r') as f:
             config = json.load(f)
         
-        print(f"✅ Config file exists: {config_file}")
+        print(f"[SUCCESS] Config file exists: {config_file}")
         
         # Check for terminal-controller
         servers = config.get('mcpServers', {})
         if 'terminal-controller' in servers:
             tc_config = servers['terminal-controller']
-            print(f"✅ terminal-controller configured")
+            print(f"[SUCCESS] terminal-controller configured")
             print(f"   Command: {tc_config.get('command', 'N/A')}")
             print(f"   Args: {tc_config.get('args', 'N/A')}")
             print(f"   Auto-start: {tc_config.get('autoStart', False)}")
@@ -41,7 +41,7 @@ def check_project_config():
         
         # Check settings
         settings = config.get('settings', {})
-        print(f"✅ Settings configured:")
+        print(f"[SUCCESS] Settings configured:")
         print(f"   Auto-start servers: {settings.get('autoStartServers', False)}")
         print(f"   Tool approval: {settings.get('enableToolApproval', True)}")
         
@@ -69,14 +69,14 @@ def check_global_config():
         with open(config_file, 'r') as f:
             config = json.load(f)
         
-        print(f"✅ Global config exists: {config_file}")
+        print(f"[SUCCESS] Global config exists: {config_file}")
         
         # Check for terminal-controller
         servers = config.get('mcpServers', {})
         terminal_servers = [name for name in servers.keys() if 'terminal' in name.lower()]
         
         if terminal_servers:
-            print(f"✅ Terminal servers found: {', '.join(terminal_servers)}")
+            print(f"[SUCCESS] Terminal servers found: {', '.join(terminal_servers)}")
             for server_name in terminal_servers:
                 server_config = servers[server_name]
                 print(f"   {server_name}:")
@@ -94,14 +94,14 @@ def check_wrapper_script():
     """Check if terminal controller wrapper exists and is functional"""
     wrapper_file = 'terminal_controller_wrapper.py'
     
-    print("\n🔧 Terminal Controller Wrapper")
+    print("\n[INFO] Terminal Controller Wrapper")
     print("-" * 50)
     
     if not os.path.exists(wrapper_file):
         print(f"❌ Wrapper script not found: {wrapper_file}")
         return False
     
-    print(f"✅ Wrapper script exists: {wrapper_file}")
+    print(f"[SUCCESS] Wrapper script exists: {wrapper_file}")
     
     # Check if it's executable
     try:
@@ -110,7 +110,7 @@ def check_wrapper_script():
         ], capture_output=True, text=True, timeout=5)
         
         if result.returncode == 0 or 'terminal_controller' in result.stderr:
-            print("✅ Wrapper script is functional")
+            print("[SUCCESS] Wrapper script is functional")
         else:
             print("⚠️  Wrapper script may have issues")
             print(f"   Exit code: {result.returncode}")
@@ -130,12 +130,12 @@ def check_dependencies():
     print("-" * 50)
     
     # Check Python
-    print(f"✅ Python: {sys.version.split()[0]}")
+    print(f"[SUCCESS] Python: {sys.version.split()[0]}")
     
     # Check if terminal_controller module is available
     try:
         import terminal_controller
-        print("✅ terminal_controller module available")
+        print("[SUCCESS] terminal_controller module available")
     except ImportError:
         print("❌ terminal_controller module not found")
         print("   Install with: pip install terminal-controller")
@@ -145,7 +145,7 @@ def check_dependencies():
     if os.name == 'nt':
         git_bash_path = "C:/Program Files/Git/bin/bash.exe"
         if os.path.exists(git_bash_path):
-            print(f"✅ Git Bash found: {git_bash_path}")
+            print(f"[SUCCESS] Git Bash found: {git_bash_path}")
         else:
             print(f"⚠️  Git Bash not found: {git_bash_path}")
             print("   Install Git for Windows if needed")
@@ -158,10 +158,10 @@ def provide_recommendations():
     print("-" * 50)
     
     recommendations = [
-        "✅ Project config created - terminal-controller will auto-start for this project",
+        "[SUCCESS] Project config created - terminal-controller will auto-start for this project",
         "🌍 Run setup_global_mcp.py for global access across all projects", 
-        "🔄 Restart Cursor AI to apply MCP configuration changes",
-        "⚙️  Check Cursor Settings → MCP for server status (green dot = running)",
+        "[INFO] Restart Cursor AI to apply MCP configuration changes",
+        "[INFO] Check Cursor Settings → MCP for server status (green dot = running)",
         "🧪 Test in Cursor chat: 'List files in current directory'",
         "📚 See cursor_mcp_setup_guide.md for detailed instructions"
     ]
@@ -198,14 +198,14 @@ def main():
     total = len(results)
     
     if passed == total:
-        print("🎉 All checks passed! MCP setup looks good.")
-        print("\n🚀 Next steps:")
+        print("[SUCCESS] All checks passed! MCP setup looks good.")
+        print("\n[INFO] Next steps:")
         print("   1. Restart Cursor AI")
         print("   2. Open a chat and try: 'Show current directory'")
         print("   3. Verify green status in Settings → MCP")
     else:
         print(f"⚠️  {passed}/{total} checks passed. See issues above.")
-        print("\n🔧 Troubleshooting:")
+        print("\n[INFO] Troubleshooting:")
         print("   • Run setup_global_mcp.py for global config")
         print("   • Check cursor_mcp_setup_guide.md for detailed help")
         print("   • Ensure all dependencies are installed")

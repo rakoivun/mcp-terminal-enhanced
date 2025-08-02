@@ -1,6 +1,6 @@
 # Cursor AI MCP Auto-Start Setup Guide
 
-## ✅ What We've Configured
+## What We've Configured
 
 ### Project-Specific Configuration (`.cursor/mcp.json`)
 This enables MCP servers **only for this project**:
@@ -53,7 +53,7 @@ To enable terminal-controller across **all projects**, create/update `~/.cursor/
 }
 ```
 
-## 🔧 Setup Instructions
+## Setup Instructions
 
 ### Method 1: Cursor UI (Recommended)
 
@@ -70,7 +70,7 @@ To enable terminal-controller across **all projects**, create/update `~/.cursor/
    - **Name**: `terminal-controller`
    - **Command**: `python`
    - **Args**: `["terminal_controller_wrapper.py"]`
-   - **Auto-start**: ✅ Enable
+   - **Auto-start**: Enable
    - **Enable tool approval**: ❌ Disable (for seamless use)
 
 4. **Verify Setup**
@@ -82,15 +82,15 @@ To enable terminal-controller across **all projects**, create/update `~/.cursor/
 1. **Project-specific** (already done): `.cursor/mcp.json`
 2. **Global**: Create `~/.cursor/mcp.json` with content above
 
-## 🚀 Auto-Start Features
+## Auto-Start Features
 
 ### What Happens on Cursor Startup:
 
-✅ **terminal-controller starts automatically**  
-✅ **Git Bash environment configured**  
-✅ **Workspace directory auto-detected**  
-✅ **No manual server startup needed**  
-✅ **Tools available immediately in chat**  
+**terminal-controller starts automatically**  
+**Git Bash environment configured**  
+**Workspace directory auto-detected**  
+**No manual server startup needed**  
+**Tools available immediately in chat**  
 
 ### Usage in Cursor Chat:
 
@@ -138,7 +138,7 @@ Expected: Directory listing using terminal-controller
 - Look for MCP startup messages
 - Should see: `[MCP Wrapper] Setting workspace to: ...`
 
-## ⚙️ Advanced Configuration
+## Advanced Configuration
 
 ### Custom Environment Variables:
 ```json
@@ -163,13 +163,13 @@ Expected: Directory listing using terminal-controller
 }
 ```
 
-## 🎯 Benefits of This Setup
+## Benefits of This Setup
 
-✅ **No manual server management**  
-✅ **Automatic workspace detection**  
-✅ **Git Bash integration on Windows**  
-✅ **Seamless tool execution**  
-✅ **Project-specific configuration**  
-✅ **Cross-platform compatibility**  
+**No manual server management**  
+**Automatic workspace detection**  
+**Git Bash integration on Windows**  
+**Seamless tool execution**  
+**Project-specific configuration**  
+**Cross-platform compatibility**  
 
 Your terminal controller will now start automatically every time you open Cursor AI!

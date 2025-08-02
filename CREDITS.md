@@ -64,9 +64,9 @@ Contributors to this project will be recognized here as they make their contribu
 
 All components used in this project are compatible with the MIT License:
 
-- **terminal-controller-mcp**: MIT License ✅
-- **Python standard library**: Python Software Foundation License ✅
-- **Git**: GNU General Public License (tool dependency only) ✅
+- **terminal-controller-mcp**: MIT License
+- **Python standard library**: Python Software Foundation License
+- **Git**: GNU General Public License (tool dependency only)
 
 ## How to Provide Attribution
 

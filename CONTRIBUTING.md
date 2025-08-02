@@ -2,7 +2,7 @@
 
 Thank you for your interest in contributing to the MCP Terminal Enhanced project! This guide will help you get started with contributing.
 
-## 🚀 Quick Start
+## Quick Start
 
 1. **Fork the repository** on GitHub
 2. **Clone your fork:**
@@ -22,7 +22,7 @@ Thank you for your interest in contributing to the MCP Terminal Enhanced project
    pip install -r requirements-dev.txt  # When available
    ```
 
-## 🛠️ Development Setup
+## Development Setup
 
 ### Prerequisites
 - Python 3.8+
@@ -42,22 +42,22 @@ python -m pytest tests/ -v
 python src/terminal_controller_wrapper.py --version
 ```
 
-## 📋 Types of Contributions
+## Types of Contributions
 
 We welcome several types of contributions:
 
-### 🐛 Bug Reports
+### Bug Reports
 - Use the [GitHub Issues](https://github.com/rakoivun/mcp-terminal-enhanced/issues) page
 - Include detailed reproduction steps
 - Provide environment information (OS, Python version, etc.)
 - Include debug output when possible
 
-### ✨ Feature Requests
+### Feature Requests
 - Open an issue to discuss the feature first
 - Explain the use case and benefits
 - Consider backward compatibility
 
-### 🔧 Code Contributions
+### Code Contributions
 - Bug fixes
 - New features
 - Performance improvements
@@ -70,7 +70,7 @@ We welcome several types of contributions:
 - Improve existing guides
 - Translate documentation
 
-## 🔄 Development Workflow
+## Development Workflow
 
 ### 1. Create a Branch
 ```bash
@@ -183,7 +183,7 @@ def get_project_root(start_path: Optional[str] = None) -> str:
 - Update existing docs when changing functionality
 - Use markdown for formatting
 
-## 🚀 Submitting Changes
+## Submitting Changes
 
 ### Pull Request Guidelines
 1. **Describe your changes** clearly in the PR description
@@ -217,7 +217,7 @@ Describe how you tested these changes:
 - [ ] Tests added/updated
 ```
 
-## 🐛 Reporting Issues
+## Reporting Issues
 
 ### Bug Report Template
 ```markdown
@@ -252,7 +252,7 @@ Output from MCP_ENHANCED_DEBUG=1
 ```
 ```
 
-## 🎯 Development Priorities
+## Development Priorities
 
 Current areas where contributions are especially welcome:
 
@@ -292,7 +292,7 @@ Current areas where contributions are especially welcome:
 
 ### Development Questions
 - 💬 **Discussions**: [GitHub Discussions](https://github.com/rakoivun/mcp-terminal-enhanced/discussions)
-- 🐛 **Issues**: [GitHub Issues](https://github.com/rakoivun/mcp-terminal-enhanced/issues)
+- **Issues**: [GitHub Issues](https://github.com/rakoivun/mcp-terminal-enhanced/issues)
 
 ### Before Asking
 1. Check existing issues and discussions
@@ -300,11 +300,11 @@ Current areas where contributions are especially welcome:
 3. Try the troubleshooting guide
 4. Include relevant details in your question
 
-## 🎉 Recognition
+## Recognition
 
 Contributors are recognized in several ways:
 - Listed in repository contributors
 - Mentioned in release notes
 - Credit in documentation where appropriate
 
-Thank you for contributing to MCP Terminal Enhanced! 🚀
+Thank you for contributing to MCP Terminal Enhanced!

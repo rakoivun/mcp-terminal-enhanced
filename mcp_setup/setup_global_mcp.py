@@ -58,7 +58,7 @@ def create_global_mcp_config():
     
     # Check if config file already exists
     if config_file.exists():
-        print(f"📁 Existing config found: {config_file}")
+        print(f"[INFO] Existing config found: {config_file}")
         
         try:
             with open(config_file, 'r') as f:
@@ -72,26 +72,26 @@ def create_global_mcp_config():
             existing_config['settings'] = mcp_config['settings']
             
             mcp_config = existing_config
-            print("✅ Merged with existing configuration")
+            print("[SUCCESS] Merged with existing configuration")
             
         except (json.JSONDecodeError, KeyError) as e:
             print(f"⚠️  Error reading existing config: {e}")
-            print("🔄 Creating new configuration")
+            print("[INFO] Creating new configuration")
     
     # Write configuration
     try:
         with open(config_file, 'w') as f:
             json.dump(mcp_config, f, indent=2)
         
-        print(f"✅ Global MCP configuration created: {config_file}")
-        print(f"🔧 Terminal controller path: {wrapper_path}")
-        print("\n📋 Configuration Summary:")
+        print(f"[SUCCESS] Global MCP configuration created: {config_file}")
+        print(f"[INFO] Terminal controller path: {wrapper_path}")
+        print("\n[INFO] Configuration Summary:")
         print(f"   • Auto-start: Enabled")
         print(f"   • Shell: {mcp_config['mcpServers']['terminal-controller-global']['env']['SHELL']}")
         print(f"   • Workspace: {project_path}")
         print(f"   • Tool approval: Disabled (seamless execution)")
         
-        print("\n🚀 Next Steps:")
+        print("\n[INFO] Next Steps:")
         print("   1. Restart Cursor AI")
         print("   2. Check Settings → MCP for green status indicator")
         print("   3. Test in chat: 'List current directory files'")
@@ -103,7 +103,7 @@ def create_global_mcp_config():
         return False
 
 def main():
-    print("🔧 Cursor AI Global MCP Setup")
+    print("[INFO] Cursor AI Global MCP Setup")
     print("=" * 40)
     
     # Check if we're in the right directory
@@ -116,7 +116,7 @@ def main():
     success = create_global_mcp_config()
     
     if success:
-        print("\n🎉 Setup completed successfully!")
+        print("\n[SUCCESS] Setup completed successfully!")
         print("\n💡 Pro Tips:")
         print("   • Use project-specific .cursor/mcp.json for per-project settings")
         print("   • Global config works across all Cursor projects")
