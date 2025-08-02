@@ -1,0 +1,21 @@
+{
+  "mcpServers": {
+    "BuildSnoop": {
+      "url": "http://127.0.0.1:3000/sse"
+    },
+    "playwright": {
+      "url": "http://localhost:8931/sse"
+    },
+    "context7": {
+      "url": "https://mcp.context7.com/mcp"
+    },
+    "sequential-thinking": {
+      "command": "sequentialthinking-proper",
+      "args": []
+    },
+    "terminal-controller": {
+      "command": "python",
+      "args": ["C:\\code\\nvdiffrast-trials\\terminal_controller_wrapper.py"]
+    }
+  }
+}
