@@ -46,7 +46,12 @@ The hidden `.cursor/mcp.json` file has a broken terminal-controller entry that's
 4. ✅ **Git Commit**: Changes committed to git (commit 1a87bed)
 5. ✅ **Verification**: Restarted Cursor - confirmed single working entry
 6. ✅ **Naming Fix**: Updated to use "terminal-controller-enhanced" for proper naming
-7. **Documentation**: Update plan with final working configuration
+7. ✅ **Git Push**: Changes pushed to origin (commit 4a0a635)
+8. ✅ **Global Config Fix**: Found and updated global config at /c/Users/rami/.cursor/mcp.json
+9. **Documentation**: Final working configuration completed
+
+## Root Cause Resolution ✅
+The issue was that the **global Cursor config** had the old "terminal-controller" name and was taking precedence over local project configs. All configs now use "terminal-controller-enhanced".
 
 ## Success Criteria
 - Only ONE terminal-controller entry visible in Cursor MCP interface

@@ -1,3 +1,8 @@
+# MCP Configuration (personal/local configs)
+.cursor/mcp.json
+**/mcp_wrapper_config.json
+**/cursor_mcp_config.json
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
