@@ -3,6 +3,22 @@
 **/mcp_wrapper_config.json
 **/cursor_mcp_config.json
 
+# Virtual environments and build artifacts (keep locally, exclude from git)
+nvdiffrast_py310/
+terminal_controller_env/
+nvdiffrast/
+venv/
+env/
+
+# Demo outputs and temporary files
+demo_output/
+*.png
+*.mp4
+test_*.py
+fix_*.py
+*_debug.py
+*_temp.py
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
