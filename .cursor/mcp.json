@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "context7": {
+      "url": "https://mcp.context7.com/mcp",
+      "description": "Context7 library documentation access",
+      "autoStart": false
+    }
+  },
+  "settings": {
+    "autoStartServers": true,
+    "enableToolApproval": false,
+    "logLevel": "info"
+  }
+}

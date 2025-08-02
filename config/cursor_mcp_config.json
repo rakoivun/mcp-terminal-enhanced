@@ -12,10 +12,6 @@
     "sequential-thinking": {
       "command": "sequentialthinking-proper",
       "args": []
-    },
-    "terminal-controller": {
-      "command": "python",
-      "args": ["C:\\path\\to\\your\\project\\src\\terminal_controller_wrapper.py"]
     }
   }
 }
